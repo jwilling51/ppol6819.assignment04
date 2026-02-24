@@ -16,8 +16,8 @@ random_walk <- function(nsteps, stepsize, prob) {
                                                 prob = prob)
   }
 
-  result <- tibble(step_number = position,
-                   location = 1:length(position))
+  result <- tibble(location = position,
+                   step_number = 1:length(position))
 
   return(result)
 }
