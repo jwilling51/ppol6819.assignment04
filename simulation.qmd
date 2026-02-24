@@ -9,6 +9,7 @@ embed-resources: true
 date: today
 editor: visual
 ---
+
 ## Exercise 05: Loading in Custom Package
 
 ```{r}
@@ -17,6 +18,7 @@ set.seed(20260224)
 ```
 
 ## Exercise 06
+
 ```{r}
 library(purrr)
 library(tidyverse)
@@ -44,6 +46,7 @@ ggplot(result, aes(x = heads)) +
 ```
 
 ## Exercise 07
+
 ```{r}
 library(purrr)
 library(tidyverse)
