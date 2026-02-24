@@ -15,7 +15,7 @@ library(tidyverse)
 #' @param prob A vector of two decimal values for the probabilities associated with each step size
 #'
 #' @returns A tibble showing each step number and its location
-#'
+#' @export
 random_walk <- function(nsteps, step_one, step_two, prob) {
 
   position <- vector(mode = "numeric", length = nsteps)
