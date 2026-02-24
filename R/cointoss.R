@@ -1,6 +1,6 @@
 # Exercise 3: function for parameterized coin toss
 
-#' Title
+#' Coin Toss Simulator
 #'
 #' @param n The number of coin tosses
 #' @param p The probability of the coin landing on heads
