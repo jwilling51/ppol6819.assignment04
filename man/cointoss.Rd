@@ -2,7 +2,7 @@
 % Please edit documentation in R/cointoss.R
 \name{cointoss}
 \alias{cointoss}
-\title{Title}
+\title{Coin Toss Simulator}
 \usage{
 cointoss(n, p)
 }
@@ -15,5 +15,5 @@ cointoss(n, p)
 The outcome of each toss, with 0s for tails and 1s for heads
 }
 \description{
-Title
+Coin Toss Simulator
 }
