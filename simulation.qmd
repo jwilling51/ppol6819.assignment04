@@ -1,0 +1,43 @@
+---
+title: "Exercise 06 and 07"
+authors: 
+- "Sarah Krause"
+- "Miguel Villa"
+- "Johnny Willing"
+format: html
+embed-resources: true
+date: today
+editor: visual
+---
+## Exercise 05: Loading in Custom Package
+
+```{r}
+library(ppol6819.assignment04)
+```
+
+## Exercise 06
+```{r}
+library(purrr)
+library(tidyverse)
+
+# Iterate ten toin cosses, 10,000 times and count number of heads.
+
+for(i in 1:10000) {
+  
+  # N is number of flips, P is probability of heads. 
+  toss <- cointoss(n = 10, p = 0.6)
+  # Setting names instead of 0 and 1. Might be unnecessary
+  toss <- if_else(toss == 1, "heads", "tails")
+  # Counts # heads in the iteration
+  heads[i] <- sum(toss == "heads")
+  # Creating a tibble for visualization
+  result <- tibble(heads = heads,
+                   iteration = 1:10000)
+  
+}
+
+# Histogram
+ggplot(result, aes(x = heads)) +
+  geom_histogram() +
+  theme_minimal()
+```
