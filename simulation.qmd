@@ -13,20 +13,27 @@ editor: visual
 ## Exercise 05: Loading in Custom Package
 
 ```{r}
+# Loading in our Custom Package and Setting Seed.
 library(ppol6819.assignment04)
 set.seed(20260224)
 ```
 
 ## Exercise 06
 
+Iterate 10 coin tosses, 10,000 times and count the number of heads.
+
+-   Probability of getting heads is 0.6.
+
 ```{r}
+# Loading in Libraries
 library(purrr)
 library(tidyverse)
 
-# Iterate ten toin cosses, 10,000 times and count number of heads.
-heads <- numeric(10000)
+# Preallocating heads
+heads <- vector(mode = "numeric", length = 10000)
 
-for(i in 1:10000) {
+# Creating For loop with preallocated number of iterations
+for(i in 1:length(heads)) {
   
   # N is number of flips, P is probability of heads. 
   toss <- cointoss(n = 10, p = 0.6)
@@ -40,8 +47,16 @@ for(i in 1:10000) {
 
 # Histogram
 ggplot(result, aes(x = heads)) +
-  geom_histogram() +
+  geom_histogram(binwidth = 0.5) +
+  scale_x_continuous(breaks = 0:10) +
+  labs(
+    title = "Frequency Distribution of Heads in 10 Unfair Coin Tosses", 
+    subtitle = "Simulated 10,000 Times Where P(X = Heads) = 0.6.", 
+    x = "Number of Heads",
+    y = "Count") +
   theme_minimal()
+  
+
 ```
 
 ## Exercise 07
@@ -52,14 +67,19 @@ library(tidyverse)
 
 # Random walk with 10,000 steps with equal likelihood of moving either 1 step forward or 3 back.
 walk <- random_walk(nsteps = 10000,
-            step_one = 1, 
-            step_two = -3,
-            prob = c(0.5, 0.5))
+                    step_one = 1, 
+                    step_two = -3,
+                    prob = c(0.5, 0.5))
 # Visualization 
 walk |>
   ggplot(aes(x = step_number, y = location)) +
   geom_line() +
   geom_hline(yintercept = 0) +
+  labs(
+    title = "1 Step Forward, 3 Steps Back", 
+    subtitle = "Simulation of 10,000 Equal Probability Steps", 
+    x = "Step Number",
+    y = "Location") +
   theme_minimal()
   
 ```
