@@ -25,10 +25,14 @@ Iterate 10 coin tosses, 10,000 times and count the number of heads.
 -   Probability of getting heads is 0.6.
 
 ```{r}
-# Loading in Libraries
-library(purrr)
-library(tidyverse)
+#| warning: false
+#| message: false 
 
+# Loading in Libraries
+library(tidyverse)
+```
+
+```{r}
 # Preallocating heads
 heads <- vector(mode = "numeric", length = 10000)
 
@@ -62,9 +66,6 @@ ggplot(result, aes(x = heads)) +
 ## Exercise 07
 
 ```{r}
-library(purrr)
-library(tidyverse)
-
 # Random walk with 10,000 steps with equal likelihood of moving either 1 step forward or 3 back.
 walk <- random_walk(nsteps = 10000,
                     step_one = 1, 
